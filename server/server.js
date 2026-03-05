@@ -5,7 +5,18 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const cron = require('node-cron'); // Ensure you run: npm install node-cron
 const { generateNetworkData, addZone, removeZone } = require('./controllers/simulation');
+const path = require('path'); // At the top
 
+// ... existing code ...
+
+// ADD THIS AFTER YOUR ROUTES
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Handle any requests that don't match the ones above
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
 const app = express();
 app.use(cors());
 app.use(express.json());
