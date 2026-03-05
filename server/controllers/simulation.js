@@ -1,11 +1,11 @@
 const nodemailer = require('nodemailer');
 
-// Set up the email bot (simulated for demo)
+// Set up the email bot 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'your.email@gmail.com',
-        pass: 'your_google_app_password_here'
+        user: 'taufikali7867@gmail.com',
+        pass: 'pzexwjvvosbplvsu'
     }
 });
 
@@ -21,7 +21,7 @@ function addZone(zoneName) {
     return false;
 }
 
-// BULLETPROOF DELETE: Handles Location Name OR Room ID
+// BULLETPROOF DELETE: Handles both "Marketing" AND "ROOM-2"
 function removeZone(identifier) {
     // 1. Try to delete by exact Location Name first
     const indexByName = zones.findIndex(z => z.toLowerCase() === identifier.toLowerCase());
@@ -30,7 +30,7 @@ function removeZone(identifier) {
         return true;
     }
 
-    // 2. Try to delete by Room ID (e.g. "ROOM-2" or "room-2")
+    // 2. Try to delete by Room ID (e.g. "ROOM-2")
     const cleanId = identifier.replace(/\s+/g, '').toLowerCase();
     const match = cleanId.match(/^room-(\d+)$/);
     if (match) {
@@ -60,7 +60,6 @@ function generateNetworkData() {
         const aiDecision = optimizeFan(temp, occupancy);
         const currentTemp = parseFloat(temp);
 
-        // Feature: Critical Email Alert Simulation
         if (currentTemp > 27.5 && !alertSentForRoom[zone]) {
             console.log(`⚠️ CRITICAL: ${zone} is overheating at ${currentTemp}°C!`);
             alertSentForRoom[zone] = true;

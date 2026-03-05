@@ -1,11 +1,11 @@
 {
   "name": "climate-sense-ionet",
   "version": "1.0.0",
+  "description": "Hackathon Fullstack Setup",
   "scripts": {
-    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
-    "build": "cd client && npm run build",
-    "start": "cd server && node server.js",
-    "dev": "concurrently \"cd server && node server.js\" \"cd client && npm run dev\""
+    "server": "cd server && node server.js",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

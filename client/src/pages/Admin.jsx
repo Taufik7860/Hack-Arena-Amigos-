@@ -14,21 +14,20 @@ export default function Admin() {
   const [newRoom, setNewRoom] = useState(''); 
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-
-  const [monthlyData, setMonthlyData] = useState([
-    { month: 'Jan', kwhSaved: 850 },
-    { month: 'Feb', kwhSaved: 920 },
-    { month: 'Mar', kwhSaved: 1100 },
-    { month: 'Apr', kwhSaved: 1250 },
-    { month: 'May', kwhSaved: 1400 },
-    { month: 'Jun', kwhSaved: 1550 },
-    { month: 'Jul', kwhSaved: 1700 },
-    { month: 'Aug', kwhSaved: 1750 },
-    { month: 'Sep', kwhSaved: 1600 },
-    { month: 'Oct', kwhSaved: 1300 },
-    { month: 'Nov', kwhSaved: 1050 },
-    { month: 'Dec', kwhSaved: 950 }
-  ]);
+const [monthlyData, setMonthlyData] = useState([
+  { month: 'Jan', kwhSaved: 850 },
+  { month: 'Feb', kwhSaved: 920 },
+  { month: 'Mar', kwhSaved: 1100 },
+  { month: 'Apr', kwhSaved: 1250 },
+  { month: 'May', kwhSaved: 1400 },
+  { month: 'Jun', kwhSaved: 1550 },
+  { month: 'Jul', kwhSaved: 1700 },
+  { month: 'Aug', kwhSaved: 1750 },
+  { month: 'Sep', kwhSaved: 1600 },
+  { month: 'Oct', kwhSaved: 1300 },
+  { month: 'Nov', kwhSaved: 1050 },
+  { month: 'Dec', kwhSaved: 950 }
+]);
   const [selectedMonth, setSelectedMonth] = useState('All');
 
   useEffect(() => {
