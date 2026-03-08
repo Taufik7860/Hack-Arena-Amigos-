@@ -22,3 +22,10 @@ Financial ROI: Provides a live dashboard calculating financial savings (at ₹8.
 ESG Automation: Features a built-in reporting engine that automatically generates and emails monthly sustainability compliance reports to management.
 
 Scalable Infrastructure: Built with a MERN stack and Socket.io to handle real-time telemetry across a distributed office network.
+
+
+# ClimateSense IONET
+Real-Time IoT Energy Monitoring Platform.
+
+## 🌐 Live Demo
+https://climate-sense-iot.web.app
